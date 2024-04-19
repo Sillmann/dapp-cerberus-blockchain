@@ -1,5 +1,5 @@
 import { ChainId } from "./chainId";
-import { Exchange } from "./exchange";
+import { Exchange  } from "./exchange";
 
 export default class Pool {
   id: string;
