@@ -1,5 +1,14 @@
-import connect from "./db";
+import connect from "./db";import Config from "../config";
 import {Token} from "commons/models/token";
+import { ChainId } from "commons/models/chainId";
+
+async function countTokens(network: ChainId): Promise<number> {
+  const db = await connect();
+  const count = await db.tokens.count({
+    where: { network }
+  });
+  return count;  
+}
 
 async function getToken(id: string) : Promise<Token | null> {
   const db = await connect();
@@ -19,6 +28,7 @@ async function addToken(token: Token): Promise<Token> {
 }
 
 export default {
+  countTokens,
   getToken,
   addToken
 } 

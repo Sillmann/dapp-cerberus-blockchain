@@ -1,5 +1,5 @@
 import connect from "./db";
-import Pool from "commons/models/pool";
+import { Pool } from "commons/models/pool";
 
 async function getPool(id: string) : Promise<Pool | null> {
   const db = await connect();
