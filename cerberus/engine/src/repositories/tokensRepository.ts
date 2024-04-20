@@ -1,4 +1,5 @@
-import connect from "./db";import Config from "../config";
+import connect from "./db";
+import Config from "../config";
 import {Token} from "commons/models/token";
 import { ChainId } from "commons/models/chainId";
 
